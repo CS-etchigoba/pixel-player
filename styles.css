@@ -1,0 +1,321 @@
+:root {
+  --background: #211c35;
+  --panel: #302743;
+  --border: #79628f;
+  --text: #f4eaff;
+  --muted: #c6b5d7;
+  --lavender: #d1b0fa;
+  --pink: #f0b7d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Courier New", monospace;
+}
+
+.player {
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 14px;
+  border: 3px solid var(--border);
+  background: var(--panel);
+  box-shadow: 4px 4px 0 #100d1d;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.mode-label {
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 9px;
+}
+
+/* The room is drawn with CSS shapes. */
+.room {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  border: 3px solid #171324;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 35px,
+      #ffffff04 35px 37px
+    ),
+    #403151;
+}
+
+.stars {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  color: var(--pink);
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+
+.night-window {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 94px;
+  height: 100px;
+  border: 6px solid #a283b2;
+  background: #242642;
+  box-shadow:
+    0 0 0 3px #211b31,
+    6px 6px 0 #211b31;
+}
+
+.moon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: #f9dfaf;
+  box-shadow:
+    -4px 4px 0 #f9dfaf,
+    4px 4px 0 #f9dfaf,
+    0 8px 0 #f9dfaf;
+}
+
+.window-cross {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 46%,
+      #a283b2 46% 54%,
+      transparent 54%
+    ),
+    linear-gradient(
+      transparent 47%,
+      #a283b2 47% 54%,
+      transparent 54%
+    );
+}
+
+.room-caption {
+  position: absolute;
+  bottom: 32px;
+  left: 12px;
+  color: #e6cfea;
+  font-size: 10px;
+}
+
+.desk {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 18px;
+  border-top: 5px solid #c89bb5;
+  background: #75516f;
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.album-placeholder {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 62px;
+  height: 62px;
+  border: 3px solid #a88abb;
+  background: #49365e;
+  color: var(--pink);
+  font-size: 32px;
+  box-shadow: 3px 3px 0 #171324;
+}
+
+.track-info {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--lavender);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.artist {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.playback {
+  margin-top: 20px;
+}
+
+.progress-track {
+  height: 8px;
+  border: 2px solid #171324;
+  background: #1e192e;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: var(--pink);
+}
+
+.timestamps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.control-button {
+  width: 42px;
+  height: 36px;
+  border: 2px solid #ab8bc4;
+  border-radius: 0;
+  background: #56406c;
+  color: var(--text);
+  font-size: 18px;
+  box-shadow: 3px 3px 0 #171324;
+}
+
+.play-button {
+  width: 52px;
+  height: 42px;
+  background: var(--lavender);
+  color: #251c35;
+}
+
+.control-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 19px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.status-light {
+  width: 6px;
+  height: 6px;
+  background: #b29bbd;
+}
+
+.connect-area {
+  margin-top: 18px;
+  text-align: center;
+}
+
+#connect-button {
+  padding: 10px 14px;
+  border: 2px solid #ab8bc4;
+  border-radius: 0;
+  background: var(--lavender);
+  color: #251c35;
+  box-shadow: 3px 3px 0 #171324;
+  font: bold 11px "Courier New", monospace;
+  cursor: pointer;
+}
+
+#connect-button:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+
+#connect-button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+#connection-message {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Ensure hidden elements stay hidden despite other display rules. */
+[hidden] {
+  display: none !important;
+}
+
+.album-art {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+#song-title,
+.artist {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#refresh-button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font: 10px "Courier New", monospace;
+  cursor: pointer;
+}
+
+#refresh-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#refresh-button:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
